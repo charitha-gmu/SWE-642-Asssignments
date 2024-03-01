@@ -1,0 +1,38 @@
+/* 
+  Sree Charitha Meka  
+  G01410061
+This is a css file which includes the required css styles for CS department Information Page.
+*/
+
+
+/* Set the background color for the body */
+body {
+    background-color: #F5F5F5;
+}
+
+/* Style for the page heading */
+.page-heading {
+    border: 5px solid #006633;
+    padding: 10px;
+    background-color: #FFCC33;
+    box-shadow:  2px 2px 2px #006633;
+}
+
+/* Style for tables */
+.table {
+    background-color: #FFCC33;
+    border: 5px solid #006633;
+}
+
+/* Style for h2 headings */
+h2 {
+    padding: 10px;
+    text-align: center;
+    color: #006633;
+}
+
+/* Style for the main container */
+.container {
+    padding-left: 10%;
+    padding-right: 10%;
+}

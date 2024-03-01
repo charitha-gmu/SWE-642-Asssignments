@@ -1,0 +1,307 @@
+<!-- 
+  Sree Charitha Meka  
+  G01410061
+
+This is a html file which contains and renders all the html changes required for CS department Survey Form Page.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+    />
+    <link href="cs-survey-page.css" rel="stylesheet" />
+
+    <link href="bootstrap.min.css" rel="stylesheet" />
+    <link href="bootstrap-icons.css" rel="stylesheet" />
+
+    <title>University Survey Form</title>
+  </head>
+
+  <body onload="checkCookie()">
+    <script src="cookie.js"></script>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <!-- Navbar content -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="home-page.html">Home Page</a>
+        </li>
+        <li class="nav-item">
+          <a href="cs-department-info.html" class="nav-link"
+            >CS Department Information</a
+          >
+        </li>
+        <li class="nav-item">
+          <a href="cs-survey-page.html" class="nav-link active"
+            >CS Department Survey</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <main class="container">
+      <div id="dialog" title="Error Message">
+        <p id="error-message"></p>
+      </div>
+
+      <div id="greeting-container"></div>
+
+      <div class="header-container">
+        <h3 class="header-text" id="heading">CS Department Survey</h3>
+        <!-- <h1 class="header-text">CS Department Survey</h1> -->
+      </div>
+      <form autocomplete="on" id="survey-form">
+        <h6 id="different-user" class="diff-user-container"></h6>
+
+        <div>
+          <label for="username" class="required-field">Username</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            required
+            autofocus
+            placeholder="Username"
+          />
+
+          <label for="address" class="required-field">Street Address</label>
+          <input
+            type="text"
+            id="address"
+            name="address"
+            required
+            placeholder="1234 Main St"
+          />
+
+          <label for="zip" class="required-field">Zipcode</label>
+          <input
+            type="text"
+            id="zip"
+            name="zip"
+            required
+            placeholder="12345"
+            onblur="fetchCityAndState()"
+          />
+          <p id="zipcode-error-text" class="error-text-color"></p>
+
+          <div class="flex-container">
+            <label for="city" class="required-field">City </label>
+            <!-- <input
+            type="text"
+            id="city"
+            name="city"
+            required
+            placeholder="City"
+          /> -->
+            <div id="city" class="content-span"></div>
+          </div>
+
+          <div  class="flex-container">
+            <label for="state" class="required-field">State</label>
+            <!-- <input
+            type="text"
+            id="state"
+            name="state"
+            required
+            placeholder="State"
+          /> -->
+            <div id="state" class="content-span"></div>
+          </div>
+
+          <label for="tel" class="required-field">Telephone Number</label>
+          <input
+            type="tel"
+            id="tel"
+            name="tel"
+            required
+            placeholder="123-456-7890"
+          />
+
+          <label for="email" class="required-field">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="user@example.com"
+          />
+
+          <label for="url">URL</label>
+          <input
+            type="url"
+            id="url"
+            name="url"
+            placeholder="http://www.example.com"
+          />
+
+          <label for="date" class="required-field">Date of Survey</label>
+          <input
+            type="date"
+            id="date"
+            name="date"
+            required
+            placeholder="YYYY-MM-DD"
+          />
+
+          <fieldset>
+            <legend class="required-field">
+              What did you like most about the campus?
+            </legend>
+            <label class="checkbox-inline"
+              ><input type="checkbox" name="likes" value="students" />
+              Students</label
+            >
+            <label class="checkbox-inline"
+              ><input type="checkbox" name="likes" value="location" />
+              Location</label
+            >
+            <label class="checkbox-inline"
+              ><input type="checkbox" name="likes" value="campus" />
+              Campus</label
+            >
+            <label class="checkbox-inline"
+              ><input type="checkbox" name="likes" value="atmosphere" />
+              Atmosphere</label
+            >
+            <label class="checkbox-inline"
+              ><input type="checkbox" name="likes" value="dorms" /> Dorm
+              Rooms</label
+            >
+            <label class="checkbox-inline"
+              ><input type="checkbox" name="likes" value="sports" />
+              Sports</label
+            >
+          </fieldset>
+
+          <fieldset>
+            <legend class="required-field">
+              How did you become interested in the university?
+            </legend>
+            <label
+              ><input type="radio" name="interest" value="friends" required />
+              Friends</label
+            >
+            <label
+              ><input type="radio" name="interest" value="tv" />
+              Television</label
+            >
+            <label
+              ><input type="radio" name="interest" value="internet" />
+              Internet</label
+            >
+            <label
+              ><input type="radio" name="interest" value="other" /> Other</label
+            >
+          </fieldset>
+
+          <label for="graduationMonth" class="required-field"
+            >High-School Graduation Month</label
+          >
+          <input
+            list="months"
+            id="graduationMonth"
+            name="graduationMonth"
+            required
+            placeholder="Select a month"
+          />
+          <datalist id="months">
+            <option value="January"></option>
+            <option value="February"></option>
+            <option value="March"></option>
+            <option value="April"></option>
+            <option value="May"></option>
+            <option value="June"></option>
+            <option value="July"></option>
+            <option value="August"></option>
+            <option value="September"></option>
+            <option value="October"></option>
+            <option value="November"></option>
+            <option value="December"></option>
+          </datalist>
+
+          <label for="gradYear" class="required-field">Year</label>
+          <input
+            type="text"
+            id="gradYear"
+            name="gradYear"
+            required
+            placeholder="YYYY"
+            type="number"
+          />
+
+          <label for="recommend" class="required-field"
+            >Would you recommend our school?</label
+          >
+          <select
+            id="recommend"
+            name="recommend"
+            required
+            style="margin-bottom: 20px"
+          >
+            <option value="very_likely">Very Likely</option>
+            <option value="likely">Likely</option>
+            <option value="unlikely">Unlikely</option>
+          </select>
+
+          <label for="dataInput"
+            >Data (Enter ten comma separated numbers 1-100):</label
+          >
+          <input type="text" id="data-input" onblur="validateAndCompute()" />
+          <p id="error-message-container" style="color: red"></p>
+          <div class="output">
+            <label>Average: </label>
+            <span id="average-output" class="content-span">-</span>
+          </div>
+          <div class="output">
+            <label>Maximum: </label>
+            <span id="maximum-output" class="content-span">-</span>
+          </div>
+
+          <label for="comments">Additional Comments</label>
+          <textarea
+            id="comments"
+            name="comments"
+            rows="4"
+            placeholder="Your comments..."
+          ></textarea>
+
+          <button
+            type="submit"
+            id="survey-submit-btn"
+            class="submit-button"
+            onclick="validateForm(event)"
+          >
+            Submit
+          </button>
+          <button
+            type="reset"
+            id="survey-reset"
+            class="reset-button"
+            onclick="resetForm()"
+          >
+            Reset
+          </button>
+        </div>
+      </form>
+
+      <div id="error-modal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeErrorModal()">&times;</span>
+          <p id="error-text" class="error-text-color"></p>
+        </div>
+      </div>
+
+      <!--Modal for displaying success message -->
+      <div id="success-modal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeSuccessModal()">&times;</span>
+          <p id="success-text">Your form is saved.</p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
