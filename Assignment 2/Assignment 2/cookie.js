@@ -27,17 +27,20 @@ function checkCookie() {
 function setUserName() {
   var username = prompt("Please enter your name:", "e.g. John");
   if (username !== "" && username !== null) {
-    setCookie("username", username, 30);
+    setCookie("username", username, 1);
   }
 }
 
 // Function to set a cookie with the user's name
-function setCookie(name, value, days) {
+function setCookie(name, value, expiresInDays) {
   var date = new Date();
-  date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+  date.setTime(date.getTime() + expiresInDays * 24 * 60 * 60 * 1000);
   var expires = "expires=" + date.toUTCString();
+
+  console.log("Setting cookie:", name, "=", value, ";", expires); // Debugging line
   document.cookie = name + "=" + value + ";" + expires + ";path=/";
   window.location.reload();
+
 }
 
 // Function to get the value of a cookie
@@ -78,11 +81,11 @@ function validateAndComputeAvgMax() {
   const errorMessage = document.getElementById("error-message-container");
 
   if (
-    numbers.length !== 10 ||
+    numbers.length < 10 ||
     !numbers.every((num) => num >= 1 && num <= 100)
   ) {
     errorMessage.innerHTML =
-      "Error: Please enter exactly ten comma separated values between 1 and 100.";
+      "Error: Please enter at least ten comma separated values between 1 and 100 inclusive.";
     return;
   } else {
     errorMessage.textContent = ""; // Clear error message
@@ -116,7 +119,6 @@ function closeErrorModal() {
 
 // Function for creating form validation
 function validateForm(event) {
-  console.log(event, "event");
   event.preventDefault();
   const nameInput = document.getElementById("username");
 
@@ -125,7 +127,7 @@ function validateForm(event) {
   const stateInput = document.getElementById("state");
   const zipInput = document.getElementById("zip");
 
-  const telephoneInput = document.getElementById("tel");
+  const telephoneInput = document.getElementById("telephone-number");
   const emailInput = document.getElementById("email");
 
   const radioInputs = document.querySelectorAll('input[name="interest"]');
@@ -162,7 +164,7 @@ function validateForm(event) {
     errors.push(" Email Address should be in a valid format. ex: abc@abc.com");
     emailInput.value = ""; // Clear field
   }
-  if (!/^[0-9]+$/.test(telephoneInput.value) || telephoneInput.value !== 10) {
+  if (!/^[0-9]+$/.test(telephoneInput.value) || telephoneInput.value.length !== 10) {
     errors.push("Telephone number should contain only 10 numeric characters.");
     telephoneInput.value = ""; // Clear field
   }
@@ -180,7 +182,6 @@ function validateForm(event) {
     );
     checkInputs.value = ""; // Clear field
   }
-  console.log(errors, "errors");
 
   if (errors.length > 0) {
     const errorMessage = errors.join("\n");

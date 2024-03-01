@@ -112,11 +112,11 @@ This is a html file which contains and renders all the html changes required for
             <div id="state" class="content-span"></div>
           </div>
 
-          <label for="tel" class="required-field">Telephone Number</label>
+          <label for="telephone-number" class="required-field">Telephone Number</label>
           <input
-            type="tel"
-            id="tel"
-            name="tel"
+            type="text"
+            id="telephone-number"
+            name="telephone-number"
             required
             placeholder="123-456-7890"
           />
@@ -250,7 +250,7 @@ This is a html file which contains and renders all the html changes required for
           <label for="dataInput"
             >Data (Enter ten comma separated numbers 1-100):</label
           >
-          <input type="text" id="data-input" onblur="validateAndCompute()" />
+          <input type="text" id="data-input" onblur="validateAndComputeAvgMax()" />
           <p id="error-message-container" style="color: red"></p>
           <div class="output">
             <label>Average: </label>
