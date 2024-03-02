@@ -54,6 +54,9 @@ The code uses an external cascading stylesheet (CSS) files (main.css and bootstr
     <!-- Template Main CSS File -->
     <link href="home-page.css" rel="stylesheet" />
 
+    <link href="cs-survey-page.css" rel="stylesheet" />
+    <link rel="stylesheet" href="cs-department-info.css">
+
     <!-- =======================================================
   * Template Name: Yummy
   * Updated: May 30 2023 with Bootstrap v5.3.0
@@ -63,128 +66,560 @@ The code uses an external cascading stylesheet (CSS) files (main.css and bootstr
   ======================================================== -->
   </head>
 
-  <body>
+  <body onload="checkCookie()">
+    <script src="cookie.js"></script>
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <!-- Navbar content -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" href="home-page.html">Home Page</a>
+          <a class="nav-link" href="#"  onclick="showContent('home')">Home Page</a>
         </li>
         <li class="nav-item">
-          <a href="cs-department-info.html">CS Department Information</a>
+          <a href="#" class="nav-link" onclick="showContent('info')">CS Department Information</a>
         </li>
-        <li class="nav-item">
-          <a href="cs-survey-page.html">CS Department Survey</a>
+        <li class="nav-item active">
+          <a href="#" class="nav-link" onclick="showContent('survey')">CS Department Survey</a>
         </li>
       </ul>
     </nav>
 
-    <!-- ======= Header ======= -->
-    <!-- <header
-      id="header"
-      class="header fixed-top d-flex align-items-center background-yellow"
-    >
-      <div class="container d-flex align-items-center justify-content-center">
-        <h2 style="color: #006633">Home Page</h2>
+    <!-- HOME PAGE CONTENT -->
+    <div id="home" class="content" style="display: none" >
+      <!-- About Me Section -->
+      <div id="hero" class="hero d-flex align-items-center section-bg">
+        <div class="container">
+          <div class="row justify-content-between gy-5">
+            <div
+              class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start"
+            >
+              <h2 style="color: #006633">About Me</h2>
+              <p>
+                A dynamic and impactful Software Development Engineer with over
+                three years of experience. I have a proven track record in
+                developing high-quality web and mobile applications. My
+                expertise encompasses modern technologies like React, React
+                Native, and Node.js, with a focus on optimizing performance and
+                user experience. Adept in team collaboration and project
+                leadership, I've successfully led initiatives, ensuring both
+                technical excellence and effective team coordination. My
+                professional journey is defined by a dedication to innovation,
+                quality, and impactful software solutions.
+              </p>
+            </div>
+            <div
+              class="col-lg-5 order-1 order-lg-2 text-center text-lg-start d-flex justify-content-center align-items-center"
+            >
+              <img src="university.jpg" class="img-fluid" alt="" />
+            </div>
+          </div>
+        </div>
       </div>
-    </header> -->
-    <!-- End Header -->
+      <!-- End About Me Section -->
+      <!-- Links to Survey and Department Information pages -->
+      <div id="contact" class="contact">
+        <div class="container" data-aos="fade-up">
+          <div class="section-header">
+            <p style="font-size: 36px; color: #006633">LINKS</p>
+          </div>
 
-    <!-- About Me Section -->
-    <div id="hero" class="hero d-flex align-items-center section-bg">
-      <div class="container">
-        <div class="row justify-content-between gy-5">
-          <div
-            class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start"
-          >
-            <h2 style="color: #006633">About Me</h2>
-            <p>
-              A dynamic and impactful Software Development Engineer with over
-              three years of experience. I have a proven track record in
-              developing high-quality web and mobile applications. My expertise
-              encompasses modern technologies like React, React Native, and
-              Node.js, with a focus on optimizing performance and user
-              experience. Adept in team collaboration and project leadership,
-              I've successfully led initiatives, ensuring both technical
-              excellence and effective team coordination. My professional
-              journey is defined by a dedication to innovation, quality, and
-              impactful software solutions.
+          
+
+          <div class="details-container">
+            <p class="link-details-name">
+              <a
+                class="a-links"
+                href="cs-department-info.html"
+                title="Click to go to the CS Department Information page"
+              >
+                CS Department Information Page</a
+              >
+            </p>
+
+            <p class="link-details-name">
+              <a
+                class="a-links"
+                href="cs-survey-page.html"
+                title="Click to go to the CS Department Information page"
+              >
+                CS Department Survey</a
+              >
             </p>
           </div>
-          <div
-            class="col-lg-5 order-1 order-lg-2 text-center text-lg-start d-flex justify-content-center align-items-center"
-          >
-            <img src="university.jpg" class="img-fluid" alt="" />
+        </div>
+      </div>
+
+      <!-- Contact Section -->
+      <div id="contact" class="contact">
+        <div class="container" data-aos="fade-up">
+          <div class="section-header">
+            <p style="font-size: 36px; color: #006633">CONTACT ME</p>
+          </div>
+
+          <div class="details-container">
+            <p class="details-name">Sree Charitha Meka</p>
+            <p class="details">charitha@gmu.edu</p>
+            <p class="details">+1 (555) 555-5555</p>
+            <p class="details">4400 University Dr Fairfax, VA 22030</p>
           </div>
         </div>
       </div>
-    </div>
-    <!-- End About Me Section -->
+      <!-- End Contact Section -->
 
-    <!-- Links to Survey and Department Information pages -->
-    <div id="contact" class="contact">
-      <div class="container" data-aos="fade-up">
-        <div class="section-header">
-          <p style="font-size: 36px; color: #006633">LINKS</p>
+      <!-- ======= Footer ======= -->
+      <footer id="footer" class="footer">
+        <div class="container">
+          <div class="copyright">
+            &copy; Copyright <strong><span>Charitha</span></strong
+            >. All Rights Reserved
+          </div>
+          <div class="credits">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/yummy-bootstrap-restaurant-website-template/ -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          </div>
         </div>
-
-        <div class="details-container">
-          <p class="link-details-name">
-            <a
-              class="a-links"
-              href="cs-department-info.html"
-              title="Click to go to the CS Department Information page"
-            >
-              CS Department Information Page</a
-            >
-          </p>
-
-          <p class="link-details-name">
-            <a
-              class="a-links"
-              href="cs-survey-page.html"
-              title="Click to go to the CS Department Information page"
-            >
-              CS Department Survey</a
-            >
-          </p>
-        </div>
-      </div>
+      </footer>
     </div>
 
-    <!-- Contact Section -->
-    <div id="contact" class="contact">
-      <div class="container" data-aos="fade-up">
-        <div class="section-header">
-          <p style="font-size: 36px; color: #006633">CONTACT ME</p>
+    <!-- INFO PAGE CONTENT -->
+    <div id="info" class="content" style="display: none">
+      <div class="container mt-5 ">
+
+        <!-- Page Heading -->
+        <div class="page-heading w3-center">
+            <h1 style="color: #006633;">CS Department Information</h1>
         </div>
 
-        <div class="details-container">
-          <p class="details-name">Sree Charitha Meka</p>
-          <p class="details">charitha@gmu.edu</p>
-          <p class="details">+1 (555) 555-5555</p>
-          <p class="details">4400 University Dr Fairfax, VA 22030</p>
+         <!--  CS Department Information -->
+        <div class="mt-4">
+            <h2>About the Department</h2><br>
+            <p>
+                The Computer Science discipline is concerned with the design, analysis, implementation, maintenance, and
+                evolution of computer-based systems, and their associated theoretical foundations. Computer science is
+                powering the information revolution of the 21st century, and computer-based systems are used in every
+                scholarly discipline, every sector of industry, and every walk of human life.
+            </p>
+            <p>
+                Advanced computation tools and techniques are revolutionizing, transforming, and often automating the
+                way
+                we work, play, communicate, collaborate, and conduct business. Computational approaches are integral to
+                a broad array of disciplines including computational natural and social sciences, bioinformatics, health
+                informatics, digital humanities, and financial technology. In addition, the spread of computing
+                throughout society has made the ethical use of computing a central concern to policymakers.
+            </p>
+            <p>
+                Computer scientists must be well-grounded in the theory of computing and in its application to diverse
+                areas, and they must be able to work closely with members of other professions that use computing. The
+                department, therefore, offers a broad array of programs in computer science at both the undergraduate
+                and
+                graduate levels. Students who study this discipline can learn about a wide variety of concepts and
+                methods in computer science—algorithms, artificial intelligence, computer networking, cyber security,
+                databases, data mining, data structures, machine learning, operating systems, programming languages,
+                robotics, software engineering—and they will explore effective and ethical applications of these
+                concepts and methods.
+            </p>
         </div>
-      </div>
+
+         <!-- Available CS Master Degrees -->
+        <div class="mt-4">
+            <h2>Master of Science Degrees</h2>
+            <ul>
+                <li><a href="#ms-cs-courses">MS in Computer Science</a></li>
+                <li><a href="#ms-isa-courses">MS in Information Security and Assurance</a></li>
+                <li><a href="#ms-is-courses">MS in Information Systems</a></li>
+                <li><a href="#ms-se-courses">MS in Software Engineering</a></li>
+            </ul>
+        </div>
+
+         <!-- Table Representation of Required Subjects in different Departments -->
+        <div class="mt-4" id="ms-cs-courses">
+            <h2>Required Courses for MS in Computer Science</h2><br>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Course Number</th>
+                        <th>Course Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CS-530</td>
+                        <td>Mathematical Foundations of Computer Science</td>
+                    </tr>
+                    <tr>
+                        <td>CS-531</td>
+                        <td>Computer Systems and Fundamentals of Systems Programming</td>
+                    </tr>
+                    <tr>
+                        <td>CS-583</td>
+                        <td>Analysis of Algorithms</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mt-4" id="ms-isa-courses">
+            <h2>Required Courses for MS in Information Security and Assurance</h2><br>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Course Number</th>
+                        <th>Course Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ISA-562</td>
+                        <td>Information Security Theory and Practice</td>
+                    </tr>
+                    <tr>
+                        <td>ISA-566</td>
+                        <td>Network Security</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mt-4" id="ms-is-courses">
+            <h2>Required Courses for MS in Information Systems</h2><br>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Course Number</th>
+                        <th>Course Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>COMP-502</td>
+                        <td>Mathematical Foundations of Computing I</td>
+                    </tr>
+                    <tr>
+                        <td>CS-550</td>
+                        <td>Database Systems</td>
+                    </tr>
+                    <tr>
+                        <td>INFS-622</td>
+                        <td>Information Systems Analysis and Design </td>
+                    </tr>
+                    <tr>
+                        <td>INFS-580</td>
+                        <td>Analytics: Big Data to Information</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mt-4" id="ms-se-courses">
+            <h2>Required Courses for MS in Software Engineering</h2><br>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Course Number</th>
+                        <th>Course Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SWE-619</td>
+                        <td>Object-Oriented Software Specification and Construction</td>
+                    </tr>
+                    <tr>
+                        <td>SWE-621</td>
+                        <td>Software Design and Architecture</td>
+                    </tr>
+                    <tr>
+                        <td>SWE-632</td>
+                        <td>User Interface Design and Development </td>
+                    </tr>
+                    <tr>
+                        <td>SWE-637</td>
+                        <td>Software Testing</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+         <!-- Links to Survey and Home Page -->
+
+        <div class="mt-4 w3-center">
+            <h4><a href="cs-survey-page.html" title="Click to go to the CS Department Survey page">CS Department Survey</a></h2>
+        </div>
+
+        <div class="mt-1 w3-center">
+            <h4><a href="home-page.html" title="Click to go back to my personal website">Home Page</a></h2>
+        </div>
+        <br>
     </div>
-    <!-- End Contact Section -->
+    </div>
 
-    <!-- ======= Footer ======= -->
-    <footer id="footer" class="footer">
-      <div class="container">
-        <div class="copyright">
-          &copy; Copyright <strong><span>Charitha</span></strong
-          >. All Rights Reserved
+    <!-- SURVEY PAGE CONTENT -->
+    <div id="survey" class="content">
+      <main class="container" >
+        <div id="dialog" title="Error Message">
+          <p id="error-message"></p>
         </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/yummy-bootstrap-restaurant-website-template/ -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+  
+        <div id="greeting-container"></div>
+  
+        <div class="header-container">
+          <h3 class="header-text" id="heading">CS Department Survey</h3>
+          <!-- <h1 class="header-text">CS Department Survey</h1> -->
         </div>
-      </div>
-    </footer>
+        <form autocomplete="on" id="survey-form">
+          <h6 id="different-user" class="diff-user-container"></h6>
+  
+          <div>
+            <label for="username" class="required-field">Username</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              required
+              autofocus
+              placeholder="Username"
+            />
+  
+            <label for="address" class="required-field">Street Address</label>
+            <input
+              type="text"
+              id="address"
+              name="address"
+              required
+              placeholder="1234 Main St"
+            />
+  
+            <label for="zip" class="required-field">Zipcode</label>
+            <input
+              type="text"
+              id="zip"
+              name="zip"
+              required
+              placeholder="12345"
+              onblur="fetchCityAndState()"
+            />
+            <p id="zipcode-error-text" class="error-text-color"></p>
+  
+            <div class="flex-container">
+              <label for="city" class="required-field">City </label>
+              <!-- <input
+              type="text"
+              id="city"
+              name="city"
+              required
+              placeholder="City"
+            /> -->
+              <div id="city" class="content-span"></div>
+            </div>
+  
+            <div  class="flex-container">
+              <label for="state" class="required-field">State</label>
+              <!-- <input
+              type="text"
+              id="state"
+              name="state"
+              required
+              placeholder="State"
+            /> -->
+              <div id="state" class="content-span"></div>
+            </div>
+  
+            <label for="telephone-number" class="required-field">Telephone Number</label>
+            <input
+              type="text"
+              id="telephone-number"
+              name="telephone-number"
+              required
+              placeholder="123-456-7890"
+            />
+  
+            <label for="email" class="required-field">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="user@example.com"
+            />
+  
+            <label for="url">URL</label>
+            <input
+              type="url"
+              id="url"
+              name="url"
+              placeholder="http://www.example.com"
+            />
+  
+            <label for="date" class="required-field">Date of Survey</label>
+            <input
+              type="date"
+              id="date"
+              name="date"
+              required
+              placeholder="YYYY-MM-DD"
+            />
+  
+            <fieldset>
+              <legend class="required-field">
+                What did you like most about the campus?
+              </legend>
+              <label class="checkbox-inline"
+                ><input type="checkbox" name="likes" value="students" />
+                Students</label
+              >
+              <label class="checkbox-inline"
+                ><input type="checkbox" name="likes" value="location" />
+                Location</label
+              >
+              <label class="checkbox-inline"
+                ><input type="checkbox" name="likes" value="campus" />
+                Campus</label
+              >
+              <label class="checkbox-inline"
+                ><input type="checkbox" name="likes" value="atmosphere" />
+                Atmosphere</label
+              >
+              <label class="checkbox-inline"
+                ><input type="checkbox" name="likes" value="dorms" /> Dorm
+                Rooms</label
+              >
+              <label class="checkbox-inline"
+                ><input type="checkbox" name="likes" value="sports" />
+                Sports</label
+              >
+            </fieldset>
+  
+            <fieldset>
+              <legend class="required-field">
+                How did you become interested in the university?
+              </legend>
+              <label
+                ><input type="radio" name="interest" value="friends" required />
+                Friends</label
+              >
+              <label
+                ><input type="radio" name="interest" value="tv" />
+                Television</label
+              >
+              <label
+                ><input type="radio" name="interest" value="internet" />
+                Internet</label
+              >
+              <label
+                ><input type="radio" name="interest" value="other" /> Other</label
+              >
+            </fieldset>
+  
+            <label for="graduationMonth" class="required-field"
+              >High-School Graduation Month</label
+            >
+            <input
+              list="months"
+              id="graduationMonth"
+              name="graduationMonth"
+              required
+              placeholder="Select a month"
+            />
+            <datalist id="months">
+              <option value="January"></option>
+              <option value="February"></option>
+              <option value="March"></option>
+              <option value="April"></option>
+              <option value="May"></option>
+              <option value="June"></option>
+              <option value="July"></option>
+              <option value="August"></option>
+              <option value="September"></option>
+              <option value="October"></option>
+              <option value="November"></option>
+              <option value="December"></option>
+            </datalist>
+  
+            <label for="gradYear" class="required-field">Year</label>
+            <input
+              type="text"
+              id="gradYear"
+              name="gradYear"
+              required
+              placeholder="YYYY"
+              type="number"
+            />
+  
+            <label for="recommend" class="required-field"
+              >Would you recommend our school?</label
+            >
+            <select
+              id="recommend"
+              name="recommend"
+              required
+              style="margin-bottom: 20px"
+            >
+              <option value="very_likely">Very Likely</option>
+              <option value="likely">Likely</option>
+              <option value="unlikely">Unlikely</option>
+            </select>
+  
+            <label for="dataInput"
+              >Data (Enter ten comma separated numbers 1-100):</label
+            >
+            <input type="text" id="data-input" onblur="validateAndComputeAvgMax()" />
+            <p id="error-message-container" style="color: red"></p>
+            <div class="output">
+              <label>Average: </label>
+              <span id="average-output" class="content-span">-</span>
+            </div>
+            <div class="output">
+              <label>Maximum: </label>
+              <span id="maximum-output" class="content-span">-</span>
+            </div>
+  
+            <label for="comments">Additional Comments</label>
+            <textarea
+              id="comments"
+              name="comments"
+              rows="4"
+              placeholder="Your comments..."
+            ></textarea>
+  
+            <button
+              type="submit"
+              id="survey-submit-btn"
+              class="submit-button"
+              onclick="validateForm(event)"
+            >
+              Submit
+            </button>
+            <button
+              type="reset"
+              id="survey-reset"
+              class="reset-button"
+              onclick="resetForm(event)"
+            >
+              Reset
+            </button>
+          </div>
+        </form>
+  
+        <div id="error-modal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeErrorModal()">&times;</span>
+            <p id="error-text" class="error-text-color"></p>
+          </div>
+        </div>
+  
+        <!--Modal for displaying success message -->
+        <div id="success-modal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeSuccessModal()">&times;</span>
+            <p id="success-text">Your form is saved.</p>
+          </div>
+        </div>
+      </main>
+    </div>
+
     <!-- End Footer -->
   </body>
 </html>

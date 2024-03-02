@@ -45,14 +45,14 @@ body {
   color: var(--color-default);
 }
 
-a {
+/* a {
   color: #FFFFFF80;
 }
 
 a:hover {
   color: #FFFFFF80;
   text-decoration: none;
-}
+} */
 
 .a-links {
   color: #006633;

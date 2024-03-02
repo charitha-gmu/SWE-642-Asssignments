@@ -2,6 +2,29 @@
 // G01410061
 // JS file that includes all the functions to handle cookie, Validation and AJAX functionality.
 
+let isContentRendered = false;
+function showContent(contentId) {
+  // Hide all content
+  document.querySelectorAll(".content").forEach(function (node) {
+    node.style.display = "none";
+  });
+
+  // Show the selected content
+  var contentElement = document.getElementById(contentId);
+  contentElement.style.display = "block";
+
+  // Update the active state of the nav items
+  document.querySelectorAll(".nav-item").forEach(function (node) {
+    node.classList.remove("active");
+  });
+  event.target.parentNode.classList.add("active");
+
+  if (contentId === "survey") {
+    console.log("in if loop")
+   checkCookie()
+  }
+}
+
 // Function to check the cookie username and displays greeting message
 function checkCookie() {
   var username = getCookie("username");
@@ -27,20 +50,28 @@ function checkCookie() {
 function setUserName() {
   var username = prompt("Please enter your name:", "e.g. John");
   if (username !== "" && username !== null) {
-    setCookie("username", username, 1);
+    // setCookie("username", username, 1);
+    setCookie("username", username, 1, function () {
+      // Directly call checkCookie or update the content/display as needed
+      checkCookie();
+      showContent("survey"); // Keep the user on the survey page
+    });
   }
 }
 
 // Function to set a cookie with the user's name
-function setCookie(name, value, expiresInDays) {
+function setCookie(name, value, expiresInDays, callback) {
   var date = new Date();
   date.setTime(date.getTime() + expiresInDays * 24 * 60 * 60 * 1000);
   var expires = "expires=" + date.toUTCString();
 
   console.log("Setting cookie:", name, "=", value, ";", expires); // Debugging line
   document.cookie = name + "=" + value + ";" + expires + ";path=/";
-  window.location.reload();
+  // window.location.reload();
 
+  if (typeof callback === "function") {
+    callback();
+  }
 }
 
 // Function to get the value of a cookie
@@ -80,10 +111,7 @@ function validateAndComputeAvgMax() {
     .map((num) => parseInt(num.trim(), 10));
   const errorMessage = document.getElementById("error-message-container");
 
-  if (
-    numbers.length < 10 ||
-    !numbers.every((num) => num >= 1 && num <= 100)
-  ) {
+  if (numbers.length < 10 || !numbers.every((num) => num >= 1 && num <= 100)) {
     errorMessage.innerHTML =
       "Error: Please enter at least ten comma separated values between 1 and 100 inclusive.";
     return;
@@ -164,7 +192,10 @@ function validateForm(event) {
     errors.push(" Email Address should be in a valid format. ex: abc@abc.com");
     emailInput.value = ""; // Clear field
   }
-  if (!/^[0-9]+$/.test(telephoneInput.value) || telephoneInput.value.length !== 10) {
+  if (
+    !/^[0-9]+$/.test(telephoneInput.value) ||
+    telephoneInput.value.length !== 10
+  ) {
     errors.push("Telephone number should contain only 10 numeric characters.");
     telephoneInput.value = ""; // Clear field
   }
@@ -185,15 +216,15 @@ function validateForm(event) {
 
   if (errors.length > 0) {
     const errorMessage = errors.join("\n");
-    window.alert(errorMessage)
+    window.alert(errorMessage);
   } else {
     alert("Form successfully submitted!");
   }
 }
 
-function resetForm() {
-    document.getElementById('survey-form').reset();
-  location.reload();
+function resetForm(event) {
+  event.preventDefault();
+  document.getElementById("survey-form").reset();
 }
 
 function isValidEmail(email) {
