@@ -1,0 +1,100 @@
+<!-- 
+  Sree Charitha Meka  
+  G01410061
+-->
+<!-- 
+This is a html file which renders the Home page.
+The code utilizes the Yummy Bootstrap restaurant website template and custom CSS styles. 
+The code uses an external cascading stylesheet (CSS) files (main.css and bootstrap.min.css)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>642 Assignment</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link
+      href="https://previews.123rf.com/images/sublayer/sublayer1505/sublayer150500001/40823583-c-letter-c-c-letter-c-icon-c-symbol-c-letter-icon-c-letter-symbol.jpg"
+      rel="icon"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+    />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <!-- Navbar content -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link active" routerLink="/">Welcome Page</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/survey" class="nav-link">Student Survey</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/all-surveys" class="nav-link">Survey List</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- HOME PAGE CONTENT -->
+    <div id="home" class="content" style="display: none">
+      <div id="hero" class="hero d-flex align-items-center section-bg">
+        <div class="container">
+          <div class="row justify-content-between gy-5">
+            <div
+              class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start"
+            >
+              <h2 style="color: #006633">Welcome to George Mason University</h2>
+            </div>
+            <div
+              class="col-lg-5 order-1 order-lg-2 text-center text-lg-start d-flex justify-content-center align-items-center"
+            >
+              <img
+                src="http://charitha-swe-642-assignment-2.s3-website-us-east-1.amazonaws.com/university.jpg"
+                class="img-fluid"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer id="footer" class="footer">
+        <div class="container">
+          <div class="copyright">
+            &copy; Copyright <strong><span>Charitha</span></strong
+            >. All Rights Reserved
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

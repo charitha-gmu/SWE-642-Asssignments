@@ -1,0 +1,292 @@
+/* 
+  Sree Charitha Meka  
+  G01410061
+This is a css file which includes the required css styles for CS Survey Form.
+*/
+
+/* Custom CSS for University Survey Form */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ece9e6;
+}
+
+h1 {
+    color: #006633;
+}
+
+.form-container {
+    padding: 0 50px 25px 50px;
+}
+
+legend,
+label {
+    color: #212529;
+    font-size: 21px !important;
+    margin-top: 10px;
+}
+
+.required-field::after {
+    content: " *";
+    color: red;
+}
+
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+    margin-left: 0.5em;
+    cursor: pointer;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    cursor: pointer;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #212529;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: black;
+}
+
+/* a {
+    color: #006633 ;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #ffcc33 !important;
+    text-decoration: underline !important;
+}
+
+a:active {
+    color: #fff;
+    text-decoration: none !important;
+} */
+
+datalist {
+    width: 100%;
+}
+
+textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Submit button styles */
+.submit-button {
+    background-color: #ffcc33;
+    color: #006633;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    width: 100% !important;
+    margin-top: 25px;
+}
+
+.submit-button:hover {
+    background-color: #006633;
+    color: #ffcc33;
+}
+
+.reset-button {
+    color: #ffcc33;
+    background-color: #006633;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    width: 100% !important;
+    margin-top: 25px;
+}
+
+.reset-button:hover {
+    color: #006633;
+    background-color: #ffcc33;
+}
+
+.form-section {
+    margin-bottom: 20px;
+}
+
+.header-container {
+    width: 80%;
+    height: 100px;
+    background-color: #ffcc33;
+    border: 5px solid #006633;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto 25px;
+    box-shadow: 1px 1px 1px #006633;
+}
+
+.header-text {
+    margin: 0;
+    color: #006633;
+}
+
+/* Custom checkbox styling */
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.1em solid currentColor;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-element-checked-color, #006633);
+    /* Use a custom property for color or replace it with your preferred color */
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+input[type="checkbox"]:focus {
+    outline: max(2px, 0.15em) solid currentColor;
+    outline-offset: max(2px, 0.15em);
+}
+
+.checkbox-inline {
+    display: flex;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.checkbox-inline input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+input[type="radio"] {
+    width: 1.15em;
+    height: 1.15em;
+    border-radius: 100%;
+}
+
+/* Create a custom box to replace the radio button */
+input[type="radio"] + label::before {
+    content: "";
+    display: inline-block;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 100%;
+    border: 2px solid grey;
+    cursor: pointer;
+    transition:
+        background-color 0.2s,
+        border-color 0.2s;
+}
+
+/* Change the color of the custom indicator when the radio button is checked */
+input[type="radio"]:checked {
+    background-color: green;
+    border-color: green;
+    padding: 0;
+}
+
+/* Add styles for when the radio button is focused (optional, for accessibility) */
+input[type="radio"]:focus + label::before {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 128, 0, 0.5);
+}
+
+/* Style adjustments for label */
+label {
+    cursor: pointer;
+    position: relative;
+}
+
+/* Ensuring proper alignment of the label text with the custom radio button */
+input[type="radio"] + label {
+    padding-left: 1.5rem;
+    line-height: 1rem;
+}
+
+.diff-user-container {
+    color: #006633;
+    text-align: center;
+}
+
+.error-message {
+    color: red;
+}
+
+.content-span {
+    color: black;
+    padding-left: 10px;
+}
+
+.error-text-color {
+    color: red;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Styles for the modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Styles for the modal content */
+.modal-content {
+    background-color: #ffcc33;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    color: #333; /* Text color */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Styles for the close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
