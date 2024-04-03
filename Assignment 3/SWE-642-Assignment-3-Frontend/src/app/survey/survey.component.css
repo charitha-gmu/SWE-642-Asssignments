@@ -1,0 +1,130 @@
+/* survey.component.css
+Description: Styles for the survey component.
+Teammates: Mary Ashwitha Gopu - G01408743, Venkata Sree Divya Kasturi - G01411963.
+ */
+body {
+    background-color: #f5f5f5;
+    font-family: 'Arial', sans-serif;
+}
+
+.page-heading {
+    text-align: center;
+    padding: 20px;
+    background-color: #006633; /* Updated color */
+    color: #ffcc33;/* GMU Green */
+}
+
+.page-heading h1 {
+    font-size: 3em; /* Adjust the size as needed */
+}
+
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border: 5px solid #ffcc33; /* GMU Green border */
+}
+
+.form-check {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.required::after {
+    content: "*";
+    color: red;
+    margin-left: 4px;
+}
+
+.container {
+    padding: 2% 5%;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.btn-primary {
+    background-color: #ffcc33;
+    border: none;
+    margin-right: 10px; /* Added space between buttons */
+}
+
+.btn-primary:hover {
+    background-color: #006633;
+    color: #ffffff;
+
+}
+
+.btn-secondary {
+    background-color: #ffcc33; /* GMU Green */
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #006633;
+    color: #ffffff;
+    /* Darker shade for hover */
+}
+
+/* Add styles for form controls */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.nav {
+    float: left;
+}
+
+.nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav a:hover:not(.active) {
+    background-color: #111;
+}
+ 
+.active {
+    background-color: #006633;
+}

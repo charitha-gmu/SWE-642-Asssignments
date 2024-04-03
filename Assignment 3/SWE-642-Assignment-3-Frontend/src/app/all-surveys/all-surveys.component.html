@@ -1,0 +1,172 @@
+<!-- all-surveys.component.html 
+Description: HTML template for the all-surveys component.
+Teammates: Mary Ashwitha Gopu - G01408743, Venkata Sree Divya Kasturi - G01411963.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <body class="bg">
+    <ul class="navbar">
+      <li class="nav"><a href="#home">Home page</a></li>
+      <li class="nav"><a href="/survey">Survey Page</a></li>
+      <li class="nav">
+        <a class="active" href="/all-surveys">All Survey Page</a>
+      </li>
+    </ul>
+
+    <br /><br /><br />
+    <div class="container mt-5">
+      <h2>All Surveys</h2>
+      <table
+        class="table table-bordered table-hover border-secondary"
+        id="customers"
+      >
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Street</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip Code</th>
+            <th>Telephone Number</th>
+            <th>Email</th>
+            <th>Survey Date</th>
+            <th>Liked Most</th>
+            <th>Interested Source</th>
+            <th>Likelihood Recommendation</th>
+            <th>Additional Comments</th>
+            <th>Actions</th>
+            <!-- Add a new header for actions -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let survey of surveys">
+            <td>{{ survey.firstName }}</td>
+            <td>{{ survey.lastName }}</td>
+            <td>{{ survey.streetAddress || "N/A" }}</td>
+            <td>{{ survey.city }}</td>
+            <td>{{ survey.state }}</td>
+            <td>{{ survey.zip }}</td>
+            <td>{{ survey.telephoneNumber || "N/A" }}</td>
+            <td>{{ survey.email }}</td>
+            <td>{{ survey.dateOfSurvey }}</td>
+            <td>{{ survey.likedMost || "Not provided" }}</td>
+            <td>{{ survey.interestSource || "Not provided" }}</td>
+            <td>{{ survey.likelihoodRecommendation || "Not provided" }}</td>
+            <td>{{ survey.additionalComments || "Not provided" }}</td>
+            <td>
+              <button (click)="updateSurvey(survey)">Update</button>
+              <button (click)="deleteSurvey(survey.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Your update form here -->
+    <div *ngIf="isUpdateFormVisible">
+      <form #updateFormRef>
+        <!-- Fields to modify the data of the selected survey -->
+        <div class="form-group">
+          <label for="firstName">First Name:</label>
+          <input
+            [(ngModel)]="selectedSurvey.firstName"
+            class="form-control"
+            id="firstName"
+            name="firstName"
+            placeholder="First Name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name:</label>
+          <input
+            [(ngModel)]="selectedSurvey.lastName"
+            class="form-control"
+            id="lastName"
+            name="lastName"
+            placeholder="Last Name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="street">Street:</label>
+          <input
+            [(ngModel)]="selectedSurvey.streetAddress"
+            class="form-control"
+            id="street"
+            name="street"
+            placeholder="Street"
+          />
+        </div>
+        <div class="form-group">
+          <label for="city">City:</label>
+          <input
+            [(ngModel)]="selectedSurvey.city"
+            class="form-control"
+            id="city"
+            name="city"
+            placeholder="City"
+          />
+        </div>
+        <div class="form-group">
+          <label for="state">State:</label>
+          <input
+            [(ngModel)]="selectedSurvey.state"
+            class="form-control"
+            id="state"
+            name="state"
+            placeholder="State"
+          />
+        </div>
+        <div class="form-group">
+          <label for="zip">ZIP:</label>
+          <input
+            [(ngModel)]="selectedSurvey.zip"
+            class="form-control"
+            id="zip"
+            name="zip"
+            placeholder="ZIP"
+          />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone:</label>
+          <input
+            [(ngModel)]="selectedSurvey.phoneNumber"
+            class="form-control"
+            id="phone"
+            name="phone"
+            placeholder="Phone"
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input
+            [(ngModel)]="selectedSurvey.email"
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder="Email"
+          />
+        </div>
+        <!-- Add similar blocks for other fields -->
+
+        <!-- Save and cancel buttons -->
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="saveUpdatedSurvey()"
+        >
+          Save
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="cancelUpdate()"
+        >
+          Cancel
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

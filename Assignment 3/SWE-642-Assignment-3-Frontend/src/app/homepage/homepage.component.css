@@ -1,0 +1,78 @@
+/*
+ * homepage.component.css
+ * Description: Styles for the homepage component.
+ * Teammates: Mary Ashwitha Gopu - G01408743, Venkata Sree Divya Kasturi - G01411963
+ */
+body,
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Raleway", sans-serif;
+}
+
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.nav {
+    float: left;
+}
+
+.nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #006633;
+}
+
+h1 {
+    color: #006633;
+}
+
+body {
+    background-color: #f5f5f5;
+    font-family: "Arial", sans-serif;
+}
+
+.w3-blue {
+    background-color: #006633 !important;
+}
+
+.w3-green {
+    background-color: #006633 !important;
+}
+
+.w3-blue:hover {
+    background-color: #ffcc33 !important;
+}
+
+.w3-green:hover {
+    background-color: #ffcc33 !important;
+}
+
+.image {
+    height: 350px;
+    margin: 25px 0px;
+}
+
+.custom-button {
+    margin: 10px 0 25px;
+}

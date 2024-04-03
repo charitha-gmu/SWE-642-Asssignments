@@ -1,0 +1,63 @@
+<!--
+homepage.component.html
+Description: HTML template for the homepage component.
+Teammates: Mary Ashwitha Gopu - G01408743, Venkata Sree Divya Kasturi - G01411963
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Student Web page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Raleway"
+    />
+  </head>
+
+  <body class="bg">
+    <ul class="navbar">
+      <li class="nav"><a class="active" href="#home">Home page</a></li>
+      <li class="nav"><a href="/survey">Survey Page</a></li>
+      <li class="nav"><a href="/all-surveys">All Survey Page</a></li>
+    </ul>
+    <br />
+    <br />
+    <!-- About section -->
+    <div
+      class="w3-container w3-light-grey w3-center w3-text-black w3-padding-32"
+      id="about"
+    >
+      <div class="heading-box">
+        <h1><b>Welcome to George Mason University's Survey</b></h1>
+      </div>
+
+      <div
+        class="image-container text-center text-lg-start d-flex justify-content-center align-items-center"
+      >
+        <img
+          src="http://charitha-swe-642-assignment-2.s3-website-us-east-1.amazonaws.com/university.jpg"
+          class="img-fluid image"
+          alt=""
+        />
+      </div>
+
+      <div>
+        <p>Click here to take a survey about the University:</p>
+        <a class="w3-button w3-blue custom-button" href="/survey"
+          >Take Survey</a
+        >
+      </div>
+
+      <div>
+        <p>
+          Click here button to view all surveys recorded about the University:
+        </p>
+        <a class="w3-button w3-green custom-button" href="/all-surveys"
+          >View All Surveys</a
+        >
+      </div>
+    </div>
+  </body>
+</html>
