@@ -1,7 +1,9 @@
+// 1. Sree Charitha Meka – G01410061
+// 2. Nagasumukh Hunsur Dinesh - G01394230
+
 /*
  * homepage.component.ts
  * Description: Homepage component displaying navigation links and information.
- * Teammates: Mary Ashwitha Gopu - G01408743, Venkata Sree Divya Kasturi - G01411963
  */
 import { Component } from '@angular/core';
 

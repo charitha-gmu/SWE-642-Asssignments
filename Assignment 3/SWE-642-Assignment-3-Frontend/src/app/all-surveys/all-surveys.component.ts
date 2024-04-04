@@ -1,3 +1,6 @@
+// 1. Sree Charitha Meka – G01410061
+// 2. Nagasumukh Hunsur Dinesh - G01394230
+
 // all-surveys.component.ts
 import { Component, OnInit, ChangeDetectorRef, OnDestroy, ViewChild, ElementRef, Renderer2} from '@angular/core';
 import { AllSurveysService } from './all-surveys.service';

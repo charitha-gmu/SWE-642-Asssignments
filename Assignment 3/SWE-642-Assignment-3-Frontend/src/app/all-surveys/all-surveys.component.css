@@ -1,6 +1,9 @@
-/* all-surveys.component.css
+/* 
+1. Sree Charitha Meka – G01410061
+2. Nagasumukh Hunsur Dinesh - G01394230
+
+all-surveys.component.css
 Description: Styles for the all-surveys component.
-Teammates: Mary Ashwitha Gopu - G01408743, Venkata Sree Divya Kasturi - G01411963.
  */
 #customers {
     font-family: Arial, Helvetica, sans-serif;
@@ -57,7 +60,6 @@ Teammates: Mary Ashwitha Gopu - G01408743, Venkata Sree Divya Kasturi - G0141196
     background-color: #111;
 }
 
-
 .active {
     background-color: #006633;
 }
@@ -67,5 +69,5 @@ h1 {
 }
 body {
     background-color: #f5f5f5;
-    font-family: 'Arial', sans-serif;
+    font-family: "Arial", sans-serif;
 }

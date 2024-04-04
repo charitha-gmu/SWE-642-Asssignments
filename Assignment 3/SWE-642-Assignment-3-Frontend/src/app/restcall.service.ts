@@ -1,6 +1,9 @@
+// 1. Sree Charitha Meka – G01410061
+// 2. Nagasumukh Hunsur Dinesh - G01394230
+
 // restcall.service.ts
 // Description: Service for making HTTP calls to the backend for survey operations.
-// Teammates: Mary Ashwitha Gopu - G01408743, Venkata Sree Divya Kasturi - G01411963
+
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Model } from './model';

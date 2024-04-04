@@ -1,7 +1,9 @@
+// 1. Sree Charitha Meka – G01410061
+// 2. Nagasumukh Hunsur Dinesh - G01394230
+
 /*
  * app.component.spec.ts
  * Description: Unit tests for the root component.
- * Teammates: Mary Ashwitha Gopu - G01408743, Venkata Sree Divya Kasturi - G01411963
  */
 
 import { TestBed } from '@angular/core/testing';

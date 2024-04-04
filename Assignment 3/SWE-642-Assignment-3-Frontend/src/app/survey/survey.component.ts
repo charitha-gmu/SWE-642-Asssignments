@@ -1,6 +1,8 @@
+// 1. Sree Charitha Meka – G01410061
+// 2. Nagasumukh Hunsur Dinesh - G01394230
+
 // survey.component.ts
 // Description: TypeScript logic for the survey component.
-// Teammates: Mary Ashwitha Gopu - G01408743, Venkata Sree Divya Kasturi - G01411963.
 
 import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';

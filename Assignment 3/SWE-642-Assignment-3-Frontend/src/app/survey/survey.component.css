@@ -1,17 +1,20 @@
-/* survey.component.css
+/* 
+1. Sree Charitha Meka – G01410061
+2. Nagasumukh Hunsur Dinesh - G01394230
+
+survey.component.css
 Description: Styles for the survey component.
-Teammates: Mary Ashwitha Gopu - G01408743, Venkata Sree Divya Kasturi - G01411963.
  */
 body {
     background-color: #f5f5f5;
-    font-family: 'Arial', sans-serif;
+    font-family: "Arial", sans-serif;
 }
 
 .page-heading {
     text-align: center;
     padding: 20px;
     background-color: #006633; /* Updated color */
-    color: #ffcc33;/* GMU Green */
+    color: #ffcc33; /* GMU Green */
 }
 
 .page-heading h1 {
@@ -60,7 +63,6 @@ body {
 .btn-primary:hover {
     background-color: #006633;
     color: #ffffff;
-
 }
 
 .btn-secondary {
@@ -124,7 +126,7 @@ textarea {
 .nav a:hover:not(.active) {
     background-color: #111;
 }
- 
+
 .active {
     background-color: #006633;
 }

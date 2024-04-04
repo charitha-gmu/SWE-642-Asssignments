@@ -1,6 +1,8 @@
+// 1. Sree Charitha Meka – G01410061
+// 2. Nagasumukh Hunsur Dinesh - G01394230
+
 // all-surveys.component.spec.ts
 // Description: Unit tests for the all-surveys component.
-// Teammates: Mary Ashwitha Gopu - G01408743, Venkata Sree Divya Kasturi - G01411963.
 
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
@@ -12,10 +14,9 @@ describe('AllSurveysComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AllSurveysComponent]
-    })
-    .compileComponents();
-    
+      imports: [AllSurveysComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(AllSurveysComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
